@@ -1,0 +1,19 @@
+{
+  "name": "smoothieql",
+  "version": "1.0.0",
+  "description": "smoothie making graphQL using",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/pfranciskoe/smoothieGraph.git"
+  },
+  "author": "Peter Koe",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/pfranciskoe/smoothieGraph/issues"
+  },
+  "homepage": "https://github.com/pfranciskoe/smoothieGraph#readme"
+}
