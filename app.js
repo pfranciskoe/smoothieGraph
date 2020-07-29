@@ -6,11 +6,11 @@ const db = require('./config/keys').mongoURI;
 
 const mongoose = require('mongoose');
 
-mongoose.connect(db);
+mongoose
+    .connect(db, { useNewUrlParser: true, useUnifiedTopology: true })
+    .then(() => console.log("Connected to MongoDB successfully"))
+    .catch(err => console.log(err));
 
-mongoose.connection.once('open', () => {
-    console.log('conneted to database');
-});
 
 //This route will be used as an endpoint to interact with Graphql, 
 //All queries will go through this route. 
