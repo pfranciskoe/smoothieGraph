@@ -82,8 +82,9 @@ var updateUser = function ({ id, name, age }) {
 }
 // Root resolver
 var root = {
-    user: getUser,  // Resolver function to return user with specific id
-    users: retrieveUsers
+    user: getUser,
+    users: retrieveUsers,
+    updateUser: updateUser  // Include mutation function in root resolver
 };
 
 // Create an express server and a GraphQL endpoint
