@@ -14,7 +14,12 @@ var schema = buildSchema(`
     age: Int
     shark: String
   }
+  # newly added code
+  type Mutation {
+    updateUser(id: Int!, name: String!, age: String): Person
+  }
 `);
+
 // Sample users
 var users = [
     {
@@ -49,15 +54,22 @@ var users = [
     }
 ];
 
-// Return a single user
+// Return a single user (based on id)
 var getUser = function (args) {
-    // ...
+    var userID = args.id;
+    return users.filter(user => user.id == userID)[0];
 }
 
-// Return a list of users
+// Return a list of users (takes an optional shark parameter)
 var retrieveUsers = function (args) {
-    // ...
+    if (args.shark) {
+        var shark = args.shark;
+        return users.filter(user => user.shark === shark);
+    } else {
+        return users;
+    }
 }
+
 // Root resolver
 var root = {
     user: getUser,  // Resolver function to return user with specific id
